@@ -10,6 +10,10 @@
 #[path = "platform/linux.rs"]
 mod platform;
 
+#[cfg(target_os = "unknown")]
+#[path = "platform/null.rs"]
+mod platform;
+
 #[cfg(target_os = "windows")]
 #[path = "platform/windows.rs"]
 mod platform;
