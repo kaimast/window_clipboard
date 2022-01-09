@@ -55,7 +55,7 @@ impl Clipboard {
     }
 }
 
-pub trait ClipboardProvider {
+pub trait ClipboardProvider: Send {
     fn read(&self) -> Result<String, Box<dyn Error>>;
 
     fn write(&mut self, contents: String) -> Result<(), Box<dyn Error>>;
